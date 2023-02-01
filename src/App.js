@@ -1,7 +1,8 @@
 import logo from "./logo.svg";
 import "./App.css";
 import { TopNavBar } from "./top-buttons/top-nav-bar.js";
-import { BlogForm } from "./exercise-A/Form.js";
+import { BlogForm } from "./exercise-A/BlogForm.js";
+import { FullForm } from "./exercise-B/FullForm.js";
 import { useState } from "react";
 
 // Need to listen for click on exercise A. onClick, render exerciseA.
@@ -18,9 +19,10 @@ function App() {
     <div className="App">
       <header className="App-header">
         <TopNavBar />
-
         <img src={logo} className="App-logo" alt="logo" />
         <BlogForm onSubmit={handleSubmit} />
+        <img src={logo} className="App-logo" alt="logo" />
+        <FullForm />
       </header>
     </div>
   );
