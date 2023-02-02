@@ -58,7 +58,7 @@ function PhoneInputForm({ addNewRecord }) {
         className="form-control authorSubmission"
         id="authorSubmission"
         autoComplete="off"
-        placeholder="Write your name here!"
+        placeholder="Write your number here!"
         value={phoneNumber}
         onChange={(event) => setPhoneNumber(event.target.value)}
       ></input>

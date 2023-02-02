@@ -41,7 +41,7 @@ function FullForm() {
     <div>
       <h1>Address List</h1>
       <PhoneInputForm addNewRecord={addNewRecord} />
-      <div className="records-list">{recordsHTML}</div>
+      <table className="records-list">{recordsHTML}</table>
     </div>
   );
 }

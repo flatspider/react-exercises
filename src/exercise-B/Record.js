@@ -8,10 +8,12 @@ function Record({ record }) {
   return (
     <div className="record-item">
       <label htmlFor={record.id}>
-        {record.firstName}
-        {record.lastName}
-        {record.address}
-        {record.phoneNumber}
+        <tr>
+          <td>{record.firstName}</td>
+          <td>{record.lastName}</td>
+          <td>{record.address}</td>
+          <td>{record.phoneNumber}</td>
+        </tr>
       </label>
     </div>
   );

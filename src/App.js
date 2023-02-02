@@ -1,5 +1,6 @@
 import logo from "./logo.svg";
 import "./App.css";
+import "bootstrap/dist/css/bootstrap.min.css";
 import { TopNavBar } from "./top-buttons/top-nav-bar.js";
 import { BlogForm } from "./exercise-A/BlogForm.js";
 import { FullForm } from "./exercise-B/FullForm.js";
