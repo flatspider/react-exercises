@@ -16,15 +16,63 @@ function App() {
     setBlogs([...blogs, newBlog]);
   };
 
+  const [exercise, setExercise] = useState("a");
+
   return (
     <div className="App">
       <header className="App-header">
-        <TopNavBar />
-        <img src={logo} className="App-logo" alt="logo" />
-        <BlogForm onSubmit={handleSubmit} />
-        <img src={logo} className="App-logo" alt="logo" />
-        <FullForm />
+        <button
+          type="submit"
+          className="btn btn-primary"
+          onClick={() => {
+            setExercise("a");
+          }}
+        >
+          Exercise A
+        </button>
+        <button
+          type="submit"
+          className="btn btn-primary"
+          onClick={() => {
+            setExercise("b");
+          }}
+        >
+          Exercise B
+        </button>
+        <button
+          type="submit"
+          className="btn btn-primary"
+          onClick={() => {
+            setExercise("c");
+          }}
+        >
+          Exercise C
+        </button>
+        <button
+          type="submit"
+          className="btn btn-primary"
+          onClick={() => {
+            setExercise("d");
+          }}
+        >
+          Exercise D
+        </button>
+        <button
+          type="submit"
+          className="btn btn-primary"
+          onClick={() => {
+            setExercise("e");
+          }}
+        >
+          Exercise E
+        </button>
       </header>
+      <img src={logo} className="App-logo" alt="logo" />
+      {exercise === "a" && <BlogForm onSubmit={handleSubmit} />}
+      {exercise === "b" && <FullForm />}
+      {exercise === "c" && <p>Test C</p>}
+      {exercise === "d" && <p>Test D</p>}
+      {exercise === "e" && <p>Test E</p>}
     </div>
   );
 }
