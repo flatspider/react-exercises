@@ -5,6 +5,7 @@ import { BlogForm } from "./exercise-A/BlogForm.js";
 import { FullForm } from "./exercise-B/FullForm.js";
 import { useState } from "react";
 import BlogPopUp from "./exercise-C/BlogPopUp";
+import BookmarkList from "./exercise-D/BookmarkList";
 
 // Need to listen for click on exercise A. onClick, render exerciseA.
 
@@ -71,7 +72,7 @@ function App() {
       {exercise === "a" && <BlogForm onSubmit={handleSubmit} />}
       {exercise === "b" && <FullForm />}
       {exercise === "c" && <BlogPopUp />}
-      {exercise === "d" && <p>Exercise D</p>}
+      {exercise === "d" && <BookmarkList />}
       {exercise === "e" && <p>Exercise E</p>}
     </div>
   );
