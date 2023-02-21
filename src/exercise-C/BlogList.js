@@ -5,13 +5,33 @@ import { useState } from "react";
 function BlogList({ blog }) {
   // Map the blogs.title over the button content.
 
+  const [showModal, setShowModal] = useState(false);
+
+  const openModal = () => {
+    setShowModal(true);
+  };
+
+  const closeModal = () => {
+    setShowModal(false);
+  };
+
+  const blogSummary = blog.summary;
+
   return (
-    <button
-      type="button"
-      className="list-group-item list-group-item-action w-25"
-    >
-      {blog.title}
-    </button>
+    <>
+      <button
+        type="button"
+        className="list-group-item list-group-item-action w-25"
+        onClick={openModal}
+      >
+        {blog.title}
+      </button>
+      {showModal && (
+        <button className="w-75" onClick={closeModal}>
+          {blogSummary}
+        </button>
+      )}
+    </>
   );
 }
 
