@@ -1,4 +1,6 @@
 import { useState } from "react";
+import Button from "react-bootstrap/Button";
+import Modal from "react-bootstrap/Modal";
 
 // This function needs to return a list of buttons as HTML that have mapped over the state.
 
@@ -26,11 +28,17 @@ function BlogList({ blog }) {
       >
         {blog.title}
       </button>
-      {showModal && (
-        <button className="w-75" onClick={closeModal}>
-          {blogSummary}
-        </button>
-      )}
+      <Modal show={showModal} onHide={closeModal}>
+        <Modal.Header closeButton>
+          <Modal.Title>{blog.title}</Modal.Title>
+        </Modal.Header>
+        <Modal.Body>{blog.summary}</Modal.Body>
+        <Modal.Footer>
+          <Button variant="secondary" onClick={closeModal}>
+            Close
+          </Button>
+        </Modal.Footer>
+      </Modal>
     </>
   );
 }
