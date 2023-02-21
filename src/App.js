@@ -1,10 +1,10 @@
-import logo from "./logo.svg";
 import "./App.css";
 
 import { TopNavBar } from "./top-buttons/top-nav-bar.js";
 import { BlogForm } from "./exercise-A/BlogForm.js";
 import { FullForm } from "./exercise-B/FullForm.js";
 import { useState } from "react";
+import BlogPopUp from "./exercise-C/BlogPopUp";
 
 // Need to listen for click on exercise A. onClick, render exerciseA.
 
@@ -70,9 +70,9 @@ function App() {
 
       {exercise === "a" && <BlogForm onSubmit={handleSubmit} />}
       {exercise === "b" && <FullForm />}
-      {exercise === "c" && <p>Test C</p>}
-      {exercise === "d" && <p>Test D</p>}
-      {exercise === "e" && <p>Test E</p>}
+      {exercise === "c" && <BlogPopUp />}
+      {exercise === "d" && <p>Exercise D</p>}
+      {exercise === "e" && <p>Exercise E</p>}
     </div>
   );
 }

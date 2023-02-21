@@ -23,7 +23,7 @@ function BlogForm({ onSubmit }) {
       <input
         type="text"
         name="title"
-        className="form-control title w-75 mt-2"
+        className="form-control title w-75 mt-2 mx-auto"
         id="blogTitle"
         autoComplete="off"
         placeholder="Enter blog title here..."
@@ -33,7 +33,7 @@ function BlogForm({ onSubmit }) {
       <input
         type="text"
         name="blogContent"
-        className="form-control contentSubmission w-75 mt-2"
+        className="form-control contentSubmission w-75 mt-2 mx-auto"
         id="captionSubmission"
         autoComplete="off"
         placeholder="Write blog content here!"
@@ -43,7 +43,7 @@ function BlogForm({ onSubmit }) {
       <input
         type="text"
         name="blogAuthor"
-        className="form-control authorSubmission w-75 mt-2"
+        className="form-control authorSubmission w-75 mt-2 mx-auto"
         id="authorSubmission"
         autoComplete="off"
         placeholder="Write your name here!"

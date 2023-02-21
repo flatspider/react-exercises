@@ -5,7 +5,7 @@ import { useState } from "react";
 const INITIAL_RECORDS = [
   {
     firstName: "Conor",
-    lastName: "Pixel",
+    lastName: "McManamon",
     address: "123 Anywhere St.",
     phoneNumber: "443-534-9273",
   },
@@ -17,14 +17,14 @@ const INITIAL_RECORDS = [
   },
   {
     firstName: "Tim",
-    lastName: "Pixel",
+    lastName: "Johnson",
     address: "123 Anywhere St.",
     phoneNumber: "888-534-9273",
   },
 ];
 
 function FullForm() {
-  const [infoRecords, setInfoRecords] = useState(INITIAL_RECORDS); // Sets records array to empty.
+  const [infoRecords, setInfoRecords] = useState(INITIAL_RECORDS); // Sets records array to INITIAL RECORDS.
 
   const addNewRecord = (newPerson) => {
     // This spreads the phone array and adds the new record to the end.
@@ -41,7 +41,17 @@ function FullForm() {
     <div>
       <h1>Address List</h1>
       <PhoneInputForm addNewRecord={addNewRecord} />
-      <table className="records-list">{recordsHTML}</table>
+      <table className="records-list table mt-2 w-75 mx-auto">
+        <thead class="thead-dark">
+          <tr>
+            <th scope="col">First</th>
+            <th scope="col">Last</th>
+            <th scope="col">Address</th>
+            <th scope="col">Phone</th>
+          </tr>
+        </thead>
+        <tbody>{recordsHTML}</tbody>
+      </table>
     </div>
   );
 }

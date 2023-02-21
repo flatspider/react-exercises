@@ -25,7 +25,7 @@ function PhoneInputForm({ addNewRecord }) {
       <input
         type="text"
         name="title"
-        className="form-control title"
+        className="form-control title w-75 mt-2 mx-auto"
         id="blogTitle"
         autoComplete="off"
         placeholder="Enter first name..."
@@ -35,7 +35,7 @@ function PhoneInputForm({ addNewRecord }) {
       <input
         type="text"
         name="title"
-        className="form-control title"
+        className="form-control title w-75 mt-2 mx-auto"
         id="blogTitle"
         autoComplete="off"
         placeholder="Enter last name..."
@@ -45,7 +45,7 @@ function PhoneInputForm({ addNewRecord }) {
       <input
         type="text"
         name="blogContent"
-        className="form-control contentSubmission"
+        className="form-control contentSubmission w-75 mt-2 mx-auto"
         id="captionSubmission"
         autoComplete="off"
         placeholder="Enter address here..."
@@ -53,17 +53,17 @@ function PhoneInputForm({ addNewRecord }) {
         onChange={(event) => setAddress(event.target.value)}
       ></input>
       <input
-        type="text"
+        type="tel"
         name="blogAuthor"
-        className="form-control authorSubmission"
+        className="form-control authorSubmission w-75 mt-2 mx-auto"
         id="authorSubmission"
         autoComplete="off"
         placeholder="Write your number here!"
         value={phoneNumber}
         onChange={(event) => setPhoneNumber(event.target.value)}
       ></input>
-      <button type="submit" className="btn btn-primary">
-        Submit Persons Info
+      <button type="submit" className="btn btn-secondary mt-2">
+        Add Info to Table
       </button>
     </form>
   );
