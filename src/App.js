@@ -67,7 +67,7 @@ function App() {
           Exercise E
         </button>
       </header>
-      <img src={logo} className="App-logo" alt="logo" />
+
       {exercise === "a" && <BlogForm onSubmit={handleSubmit} />}
       {exercise === "b" && <FullForm />}
       {exercise === "c" && <p>Test C</p>}
