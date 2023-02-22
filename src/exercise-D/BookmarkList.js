@@ -25,6 +25,8 @@ function BookmarkList() {
   const [newBookmarkTitle, setNewBookmarkTitle] = useState("");
   const [newBookmarkTag, setNewBookmarkTag] = useState("");
 
+  // This creates a list of the unique values within the tags.
+
   const handleSubmit = (submits) => {
     submits.preventDefault(); // Stops the button from refreshing the page.
 
@@ -40,6 +42,32 @@ function BookmarkList() {
     setNewBookmarkTag(""); // Clears the input box.
   };
 
+  const tags = [...new Set(bookmarkList.map((bookmark) => bookmark.tag))];
+
+  const tagsHTML = tags.map((tag) => {
+    return (
+      <button
+        key={tag}
+        type="button"
+        className="btn btn-link"
+        onClick={() => setTagFilter(tag)}
+      >
+        {tag.toUpperCase()}
+      </button>
+    );
+  });
+
+  console.log(tags);
+  console.log(tagsHTML);
+
+  const bookmarksHTML = bookmarkList
+    .filter((bookmark) => {
+      return tagFilter ? bookmark.tag.toLowerCase() === tagFilter : bookmark;
+    })
+    .map((bookmark, index) => <Bookmark key={index} bookmark={bookmark} />);
+
+  console.log(bookmarksHTML);
+
   return (
     <div>
       <header>
@@ -50,6 +78,7 @@ function BookmarkList() {
         >
           ALL
         </button>
+        {tagsHTML}
       </header>
 
       <form onSubmit={handleSubmit}>
@@ -87,9 +116,7 @@ function BookmarkList() {
           Add bookmark!
         </button>
       </form>
-      {bookmarkList.map((bookmark, index) => (
-        <Bookmark key={index} bookmark={bookmark} />
-      ))}
+      {bookmarksHTML}
     </div>
   );
 }
