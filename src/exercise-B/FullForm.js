@@ -33,8 +33,8 @@ function FullForm() {
 
   // How do I reach into the state and display the records?
 
-  const recordsHTML = infoRecords.map((record) => (
-    <Record firstName={record.firstName} record={record} />
+  const recordsHTML = infoRecords.map((record, index) => (
+    <Record key={index} firstName={record.firstName} record={record} />
   ));
 
   return (
@@ -42,7 +42,7 @@ function FullForm() {
       <h1>Address List</h1>
       <PhoneInputForm addNewRecord={addNewRecord} />
       <table className="records-list table mt-2 w-75 mx-auto">
-        <thead class="thead-dark">
+        <thead className="thead-dark">
           <tr>
             <th scope="col">First</th>
             <th scope="col">Last</th>

@@ -14,7 +14,7 @@ const INITIAL_BOOKMARKS = [
   {
     url: "https://lesswrong.com",
     title: "Improving Rationality",
-    tag: "AI",
+    tag: "ai",
   },
 ];
 
@@ -42,7 +42,9 @@ function BookmarkList() {
     setNewBookmarkTag(""); // Clears the input box.
   };
 
-  const tags = [...new Set(bookmarkList.map((bookmark) => bookmark.tag))];
+  const tags = [
+    ...new Set(bookmarkList.map((bookmark) => bookmark.tag.toUpperCase())),
+  ];
 
   const tagsHTML = tags.map((tag) => {
     return (
@@ -62,7 +64,7 @@ function BookmarkList() {
 
   const bookmarksHTML = bookmarkList
     .filter((bookmark) => {
-      return tagFilter ? bookmark.tag.toLowerCase() === tagFilter : bookmark;
+      return tagFilter ? bookmark.tag.toUpperCase() === tagFilter : bookmark;
     })
     .map((bookmark, index) => <Bookmark key={index} bookmark={bookmark} />);
 
