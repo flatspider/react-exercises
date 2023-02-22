@@ -59,16 +59,11 @@ function BookmarkList() {
     );
   });
 
-  console.log(tags);
-  console.log(tagsHTML);
-
   const bookmarksHTML = bookmarkList
     .filter((bookmark) => {
       return tagFilter ? bookmark.tag.toUpperCase() === tagFilter : bookmark;
     })
     .map((bookmark, index) => <Bookmark key={index} bookmark={bookmark} />);
-
-  console.log(bookmarksHTML);
 
   return (
     <div>

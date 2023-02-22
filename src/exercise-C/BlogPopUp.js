@@ -48,7 +48,9 @@ const INITIAL_BLOGS = [
 function BlogPopUp() {
   const [blogs, setBlogs] = useState(INITIAL_BLOGS);
 
-  const blogListHTML = blogs.map((blog) => <BlogList blog={blog} />);
+  const blogListHTML = blogs.map((blog, index) => (
+    <BlogList key={index} blog={blog} />
+  ));
 
   return <div className="list-group">{blogListHTML}</div>;
 }
